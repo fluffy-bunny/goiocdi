@@ -1,4 +1,4 @@
-module github.com/goioc/di
+module github.com/fluffy-bunny/goiocdi
 
 go 1.16
 

@@ -17,13 +17,14 @@ package di
 import (
 	"context"
 	"errors"
-	"github.com/sirupsen/logrus"
 	"io"
 	"reflect"
 	"strconv"
 	"sync"
 	"sync/atomic"
 	"unsafe"
+
+	"github.com/sirupsen/logrus"
 )
 
 // Scope is a enum for bean scopes supported in this IoC container.
@@ -64,6 +65,10 @@ var scopes = make(map[string]Scope)
 var singletonInstances = make(map[string]interface{})
 var userCreatedInstances = make(map[string]bool)
 var beanPostprocessors = make(map[reflect.Type][]func(bean interface{}) error)
+
+func GetScopes() map[string]Scope {
+	return scopes
+}
 
 // InitializingBean is an interface marking beans that need to be additionally initialized after the container is ready.
 type InitializingBean interface {
