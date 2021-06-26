@@ -5,4 +5,4 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_paths = ["github.com/goioc/di"]
+  import_paths = ["github.com/fluffy-bunny/goiocdi"]
